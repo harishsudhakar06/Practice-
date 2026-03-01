@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'MESSAGE', defaultValue: 'Hello')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/harishsudhakar06/Practice-.git', branch: 'main'
+            }
+        }
+
+        stage('Print Parameter') {
+            steps {
+                echo "Message: ${params.MESSAGE}"
+            }
+        }
+
+        stage('BAT Command') {
+            steps {
+                bat 'echo Hello from Jenkins'
+            }
+        }
+    }
+}
