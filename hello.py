@@ -1,7 +1,7 @@
 print("my first git process")
 print("hello jenkins")
-pipeline {
-    agent any
+#pipeline {
+    #agent any
 
     parameters {
         string(name: 'MESSAGE', defaultValue: 'Hello')
